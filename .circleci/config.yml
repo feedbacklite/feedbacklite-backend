@@ -1,7 +1,14 @@
 version: 2.1
-orbs:
-  heroku: circleci/heroku@0.0.10
+jobs:
+  run_tests:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm test
+
 workflows:
-  heroku_deploy:
+  build_test:
     jobs:
-      - heroku/deploy-via-git
+      - run_tests
