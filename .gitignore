@@ -1,0 +1,10 @@
+node_modules/
+server/dist/
+.DS_Store
+coverage/
+.nyc_output/
+.env
+.vscode
+yarn.lock
+package.lock
+gitattributes

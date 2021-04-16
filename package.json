@@ -3,6 +3,63 @@
   "version": "1.0.0",
   "description": "backend for feedbacklite project",
   "main": "index.js",
+  "repository": "https://github.com/feedbacklite/feedbacklite-backend.git",
   "author": "Aquila Afuadajo",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel src --out-dir ./dist",
+    "start": "node ./dist/index.js",
+    "lint": "eslint src --fix",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
+    "@babel/preset-env": "^7.4.2",
+    "@types/jest": "^24.0.11",
+    "babel-jest": "^24.7.1",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-env": "^1.7.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "enzyme": "^3.9.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.18",
+    "morgan": "^1.9.1",
+    "nodemailer": "^6.4.17"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^4.3.6",
+    "jest": "^24.5.0",
+    "nodemon": "^1.18.9"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "js ts json",
+    "ignore": [
+      "*.test.ts",
+      "*.test.js"
+    ],
+    "delay": "3",
+    "execMap": {
+      "ts": "ts-node"
+    }
+  }
 }
