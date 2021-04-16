@@ -1,0 +1,8 @@
+{
+  "name": "feedbacklite",
+  "version": "1.0.0",
+  "description": "backend for feedbacklite project",
+  "main": "index.js",
+  "author": "Aquila Afuadajo",
+  "license": "MIT"
+}
