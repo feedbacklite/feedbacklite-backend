@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  heroku: circleci/heroku@0.0.10
   
 jobs:
   run_tests:
@@ -15,6 +13,3 @@ workflows:
   build_test:
     jobs:
       - run_tests
-  heroku_deploy:
-    jobs:
-      - heroku/deploy-via-git
